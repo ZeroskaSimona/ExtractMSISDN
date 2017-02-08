@@ -9,22 +9,38 @@
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <script type="text/javascript">
+        function clickEx(element)
+        {
+        	var phoneNum = document.getElementById("phoneNo").value;
+        	//var somevariable = "{{ $name }}";
+        	//alert("Clicked on " + phoneNum);
+        	//foreach countrycode order by length sporedi so prvite tri cifri, pa so dve, pa so edna
+        	//vrati country code i country identifier
+        	//slednite dve cifri sporedi gi so mno->code
+        	//ostanatite se sn        	
+        }
+
         </script>
     </head>
     <body>
         <h1>Extract</h1> 
       
-      	@foreach ($country as $c)
-			{{ $c->CountryName }} </br>
-		@endforeach
-                
-        @foreach ($mno as $m)
-			{{ $m->MnoCode }} </br>
-		@endforeach
+<!--      	@foreach ($country as $c)-->
+<!--			{{ $c->CountryName }} </br>-->
+<!--		@endforeach-->
+<!--                -->
+<!--        @foreach ($mno as $m)-->
+<!--			{{ $m->MnoCode }} </br>-->
+<!--		@endforeach-->
 		
 		<form action="extractClick.php" method="get">
-    		Enter phone number: <input type="text" name="phoneNo">
-        	<input type="button"  name="extractbutton" value="Extract">
+    		Enter phone number: <input type="text" name="phoneNo" id="phoneNo">
+        	<input type="button"  name="extractbutton" value="Extract" onClick="clickEx(this);"> </br>
+        	</br>
+        	CC: <label name="lblcc"></label> </br>
+        	MNO: <label name="lblmno"></label> </br>
+        	SN: <label name="lblsn"></label> </br>
+        	CI: <label name="lblci"></label>
        </form>
     </body>
 </html>

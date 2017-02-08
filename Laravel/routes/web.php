@@ -22,8 +22,8 @@ Route::get('/msisdn', function () {
 
 
 Route::get('/extract', function () {
-	/* $name = 'simona'; */
+	$name = 'simona'; 
 	$country = DB::select('select * from country');
 	$mno = DB::select('select * from mobilenetworkoperator');
-    return view('extract')->with(compact('country','mno'));
+    return view('extract')->with(compact('country','mno','name'));
 });
