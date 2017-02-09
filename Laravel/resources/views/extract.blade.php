@@ -9,15 +9,25 @@
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <script type="text/javascript">
+        
         function clickEx(element)
         {
         	var phoneNum = document.getElementById("phoneNo").value;
+        	//var phoneNumStr= phoneNum.replace(" ","");
+        	var phoneNumStr=phoneNum.split(" ").join("");
+        	var ccStr = phoneNumStr.substring(0, 3);
+        	document.getElementById("lblcc").innerText = ccStr;
+        	//var testt = "<?php echo $name; ?>";
         	//var somevariable = "{{ $name }}";
-        	//alert("Clicked on " + phoneNum);
+        	//alert("Clicked on " + testt);
         	//foreach countrycode order by length sporedi so prvite tri cifri, pa so dve, pa so edna
         	//vrati country code i country identifier
         	//slednite dve cifri sporedi gi so mno->code
-        	//ostanatite se sn        	
+        	//ostanatite se sn     
+			@foreach ($country as $c)
+				var cName = {{ $c->CountryName }};
+				alert("Clicked on " + cName);
+			@endforeach  	
         }
 
         </script>
@@ -37,10 +47,10 @@
     		Enter phone number: <input type="text" name="phoneNo" id="phoneNo">
         	<input type="button"  name="extractbutton" value="Extract" onClick="clickEx(this);"> </br>
         	</br>
-        	CC: <label name="lblcc"></label> </br>
-        	MNO: <label name="lblmno"></label> </br>
-        	SN: <label name="lblsn"></label> </br>
-        	CI: <label name="lblci"></label>
+        	CC: <label id="lblcc" name="lblcc"></label> </br>
+        	MNO: <label id="lblmno" name="lblmno"></label> </br>
+        	SN: <label id="lblsn" name="lblsn"></label> </br>
+        	CI: <label id="lblci" name="lblci"></label>
        </form>
     </body>
 </html>
