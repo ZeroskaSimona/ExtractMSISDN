@@ -10,11 +10,10 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Extract MSISDN</h1>
-        <?php echo $users; ?>
+        <h1>Extract MSISDN testtttt</h1>
+        
         <div>
-        Enter phone number: <input type="text" name="phoneNo">
-        <input type="button" value="Extract">
+        
         </div>
     </body>
 </html>

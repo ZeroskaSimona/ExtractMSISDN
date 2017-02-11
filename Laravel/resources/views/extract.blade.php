@@ -15,8 +15,10 @@
         	var phoneNum = document.getElementById("phoneNo").value;
         	//var phoneNumStr= phoneNum.replace(" ","");
         	var phoneNumStr=phoneNum.split(" ").join("");
-        	var ccStr = phoneNumStr.substring(0, 3);
+        	var ccStr = phoneNumStr.substring(0, 4);
         	document.getElementById("lblcc").innerText = ccStr;
+
+       	
         	//var testt = "<?php echo $name; ?>";
         	//var somevariable = "{{ $name }}";
         	//alert("Clicked on " + testt);
@@ -24,21 +26,18 @@
         	//vrati country code i country identifier
         	//slednite dve cifri sporedi gi so mno->code
         	//ostanatite se sn     
-			@foreach ($country as $c)
-				var cName = {{ $c->CountryName }};
-				alert("Clicked on " + cName);
-			@endforeach  	
-        }
+		}
 
         </script>
     </head>
     <body>
         <h1>Extract</h1> 
-      
-<!--      	@foreach ($country as $c)-->
-<!--			{{ $c->CountryName }} </br>-->
-<!--		@endforeach-->
-<!--                -->
+      	
+      	<!--
+	      	@foreach ($country as $c)
+	      	{{ $c->CountryName }}
+			@endforeach
+-->
 <!--        @foreach ($mno as $m)-->
 <!--			{{ $m->MnoCode }} </br>-->
 <!--		@endforeach-->
@@ -48,9 +47,11 @@
         	<input type="button"  name="extractbutton" value="Extract" onClick="clickEx(this);"> </br>
         	</br>
         	CC: <label id="lblcc" name="lblcc"></label> </br>
-        	MNO: <label id="lblmno" name="lblmno"></label> </br>
+        	MNO: <label id="countryCode" name="lblmno"></label> </br>
         	SN: <label id="lblsn" name="lblsn"></label> </br>
         	CI: <label id="lblci" name="lblci"></label>
+        	
        </form>
     </body>
 </html>
+

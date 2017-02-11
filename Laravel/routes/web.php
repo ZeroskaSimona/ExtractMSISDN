@@ -16,9 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/msisdn', function () {
-    return view('index');
+	$name = 'simona'; 
+	$country = DB::select('select * from country');
+	$mno = DB::select('select * from mobilenetworkoperator');
+    return view('index')->with(compact('country','mno','name'));
 });
-
 
 
 Route::get('/extract', function () {
