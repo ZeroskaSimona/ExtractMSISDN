@@ -3,10 +3,11 @@ session_start();
 $lista='';
 $lista_arr=array();
 $countries=array();
-$dc=0;
+$dc="";
 $dcLen=0;
-$ci=0;
-$mno=0;
+$ci="";
+$mno="";
+$snStr="";
 $mnoLen=0;
 $vkLen=0;
 
@@ -42,16 +43,23 @@ if(isset($_GET['extractbt'])){
   // echo "broj: ".$phoneNumStr."</br>";    
 	foreach($rows as $row){
 	  $ccStr=substr($phoneNumStr,0,3);
+	  $ccStrs=substr($phoneNumStr,0,2);
 	 // echo "ccstr: ".$ccStr."</br>";
 	 // echo "dcof: ".$row["DialingCode"]."</br>";
 	  if ($ccStr == $row["DialingCode"]){
-	  	//echo "ccstr: ".$ccStr;
+	  	//echo "ccstr3: ".$ccStr;
 	  	$dc=$row["DialingCode"];
 	  	$ci=$row["IsoCode"];
-	  	echo "CC:".$dc."</br>";
-	  	
+	  	//echo "CC:".$dc."</br>"; 	
 	  	//echo $row["CountryName"];
-	  	}
+	  } elseif($ccStrs == $row["DialingCode"]){
+		  	//echo "ccstr2: ".$ccStrs;
+		  	$dc=$row["DialingCode"];
+		  	$ci=$row["IsoCode"];
+	  } else {
+	  	//$dc="Invalid Dialing code!";
+	  	//$ci="Invalid Iso code!";
+	  }
 	}
 	
 	$dcLen=strlen($dc);
@@ -65,16 +73,20 @@ if(isset($_GET['extractbt'])){
 		 if ($mnoStr == $rowMno["MnoCode"]){
 		  	//echo "ccstr: ".$ccStr;
 		  	$mno=$rowMno["MnoName"];
-		  	echo "MNO:".$mno."</br>";
+		  	//echo "MNO:".$mno."</br>";
 		  	//echo $row["CountryName"];
-		  	}
+		  } else {
+		  	//$mno="Invalid Mobile network operator!";
+		  }
 	}
 	$mnoLen=strlen($mnoStr);
 	//echo "len ".$mnoLen;
 	$vkLen=$mnoLen+$dcLen;
-	$snStr=substr($phoneNumStr,$dcLen);
-	echo "SN: ".$snStr."</br>";
-	echo "CI:".$ci."</br>";
+	$snStr=substr($phoneNumStr,$vkLen);
+	
+	
+	//echo "SN: ".$snStr."</br>";
+	//echo "CI:".$ci."</br>";
 }
 ?>
 <?php echo implode(', ', $lista_arr);?>
@@ -112,12 +124,14 @@ if(isset($_GET['extractbt'])){
         <h1>Extract</h1> 	
 		<form action="" method="get">
     		Enter phone number: <input type="text" name="phoneNo" id="phoneNo">
-        	<input type="submit"  name="extractbt" value="Extract" > </br>
-               	
-        	CC: <label id="lblcc" name="lblcc"></label> </br>
-        	MNO: <label id="countryCode" name="lblmno"></label> </br>
-        	SN: <label id="lblsn" name="lblsn"></label> </br>
-        	CI: <label id="lblci" name="lblci"></label>        	
+        	<input type="submit"  name="extractbt" value="Extract" > </br>    	
        </form>
     </body>
 </html>
+
+<?php 
+	echo "CC:".$dc."</br>";
+	echo "MNO:".$mno."</br>";
+	echo "SN: ".$snStr."</br>";
+	echo "CI:".$ci."</br>";
+?>
