@@ -1,8 +1,5 @@
 <?php
 session_start();
-$lista='';
-$lista_arr=array();
-$countries=array();
 $dc="";
 $dcLen=0;
 $ci="";
@@ -11,10 +8,6 @@ $snStr="";
 $mnoLen=0;
 $vkLen=0;
 
-$countries = DB::select('select * from country');
-foreach ($countries as $value) {
-    /* echo $value; */
-}
 if(isset($_GET['extractbt'])){
 	$broj=$_GET['phoneNo'];
 
@@ -36,24 +29,18 @@ if(isset($_GET['extractbt'])){
 	  array_push($rowsMno, $rowMno);
 	}
 	mysqli_close($con);
-	
-	//$numb=$_SESSION['number'];
 
-    $phoneNumStr=str_replace(" ","",$broj);
-  // echo "broj: ".$phoneNumStr."</br>";    
+	$phNumStr=str_replace("+","",$broj);
+	$phoneNumStr=str_replace(" ","",$phNumStr);
+    //echo "broj: ".$phoneNumStr."</br>";    
 	foreach($rows as $row){
 	  $ccStr=substr($phoneNumStr,0,3);
 	  $ccStrs=substr($phoneNumStr,0,2);
-	 // echo "ccstr: ".$ccStr."</br>";
-	 // echo "dcof: ".$row["DialingCode"]."</br>";
+	  
 	  if ($ccStr == $row["DialingCode"]){
-	  	//echo "ccstr3: ".$ccStr;
 	  	$dc=$row["DialingCode"];
 	  	$ci=$row["IsoCode"];
-	  	//echo "CC:".$dc."</br>"; 	
-	  	//echo $row["CountryName"];
 	  } elseif($ccStrs == $row["DialingCode"]){
-		  	//echo "ccstr2: ".$ccStrs;
 		  	$dc=$row["DialingCode"];
 		  	$ci=$row["IsoCode"];
 	  } else {
@@ -63,33 +50,19 @@ if(isset($_GET['extractbt'])){
 	}
 	
 	$dcLen=strlen($dc);
-	//echo "len ".$dcLen;
 	$mnoStr=substr($phoneNumStr,$dcLen,2);
-	//echo "mnostr: ".$mnoStr;
 	foreach($rowsMno as $rowMno){
-		//echo "mnocode: ".$rowMno["MnoCode"]."</br>";
 		  $mnoStr=substr($phoneNumStr,$dcLen,2);
-		 //echo "mnostr: ".$mnoStr;
 		 if ($mnoStr == $rowMno["MnoCode"]){
-		  	//echo "ccstr: ".$ccStr;
 		  	$mno=$rowMno["MnoName"];
-		  	//echo "MNO:".$mno."</br>";
-		  	//echo $row["CountryName"];
-		  } else {
-		  	//$mno="Invalid Mobile network operator!";
 		  }
 	}
 	$mnoLen=strlen($mnoStr);
-	//echo "len ".$mnoLen;
 	$vkLen=$mnoLen+$dcLen;
 	$snStr=substr($phoneNumStr,$vkLen);
-	
-	
-	//echo "SN: ".$snStr."</br>";
-	//echo "CI:".$ci."</br>";
 }
 ?>
-<?php echo implode(', ', $lista_arr);?>
+
 
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
@@ -101,27 +74,9 @@ if(isset($_GET['extractbt'])){
         <title>Extract msisdn</title>
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <script type="text/javascript">
-        
-       //function clickEx(element)
-        //{
-        	//var phoneNum = document.getElementById("phoneNo").value;
-        	//var phoneNumStr= phoneNum.replace(" ","");
-        	//var phoneNumStr=phoneNum.split(" ").join("");
-        	//var ccStr = phoneNumStr.substring(0, 4);
-        	//document.getElementById("lblcc").innerText = ccStr;
-        	//var somevariable = "{{ $name }}";
-        	//alert("Clicked on " + testt);
-        	//foreach countrycode order by length sporedi so prvite tri cifri, pa so dve, pa so edna
-        	//vrati country code i country identifier
-        	//slednite dve cifri sporedi gi so mno->code
-        	//ostanatite se sn     
-		//}
-
-        </script>
     </head>
     <body>
-        <h1>Extract</h1> 	
+        <h2>Extract MSISDN</h2> 	
 		<form action="" method="get">
     		Enter phone number: <input type="text" name="phoneNo" id="phoneNo">
         	<input type="submit"  name="extractbt" value="Extract" > </br>    	

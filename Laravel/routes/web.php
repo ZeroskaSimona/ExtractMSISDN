@@ -15,15 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/msisdn', function () {
+/*Route::get('/msisdn', function () {
 	$country = DB::select('select * from country');
 	return view('index')->with(compact('country','mno','name','lista_arr'));
-});
+});*/
 
 
 Route::get('/extract', function () {
 	$name = 'simona'; 
 	$country = DB::select('select * from country');
 	$mno = DB::select('select * from mobilenetworkoperator');
-    return view('extract')->with(compact('country','mno','name','lista_arr', 'dc','ci','dclen'));
+    return view('extract')->with(compact('country','mno','name','dc','ci','dclen'));
 });
