@@ -21,7 +21,7 @@ Route::get('/', function () {
 });*/
 
 
-Route::get('/extract', function () {
+Route::get('http://localhost/extractMSISDN/laravel/public/extract', function () {
 	$name = 'simona'; 
 	$country = DB::select('select * from country');
 	$mno = DB::select('select * from mobilenetworkoperator');
