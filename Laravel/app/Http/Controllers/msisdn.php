@@ -7,4 +7,6 @@ class Msisdn_Controller extends Controller{
 	public function get_Index(){
 		 return View::make('extract');
 	}
+	
+	//$this->client->request('GET', 'posts');
 }

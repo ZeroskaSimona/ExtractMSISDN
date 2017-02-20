@@ -24,19 +24,28 @@ class ExampleTest extends DuskTestCase
     public function testPhoneNo()
     {
     	$this->browse(function (Browser $browser) {
+            $browser->type('phoneNo', '+389 70 123456');
+            $browser->pause(5000);
+            $res='+389 70 123456';
+            $browser->assertInputValue('phoneNo', $res);
+            //$tres='+389 70 123456';
+            //$val=str_replace(" ","",$tres);
+         });  
+    }
+	
+	public function testSubstrPhoneNo()
+    {
+    	$this->browse(function (Browser $browser) {
             $browser->type('phoneNo', '38970123456');
-        });   	
+            $browser->pause(2000);
+            $res='+389 70 123456';
+            $resS=str_replace("+","",$res);
+            $val=str_replace(" ","",$resS);
+            $browser->assertInputValue('phoneNo', $val);
+                   
+         });   	
     	//$browser->assertElementValueEquals('phoneNo', $val);
     }
     
-public function testPause()
-    {
-    	$this->browse(function (Browser $browser) {
-            $browser->pause(6000);
-            $res='3897012345';
-            $browser->assertInputValue('phoneNo', $res);
-        });   	
-    }
-    
-    
+   
 }
