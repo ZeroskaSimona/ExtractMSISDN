@@ -23,8 +23,19 @@ class ExampleTest extends DuskTestCase
  	
     public function testPhoneNo()
     {
-    	$val='';
+    	$this->browse(function (Browser $browser) {
+            $browser->type('phoneNo', '38970123456');
+        });   	
     	//$browser->assertElementValueEquals('phoneNo', $val);
+    }
+    
+public function testPause()
+    {
+    	$this->browse(function (Browser $browser) {
+            $browser->pause(6000);
+            $res='3897012345';
+            $browser->assertInputValue('phoneNo', $res);
+        });   	
     }
     
     
