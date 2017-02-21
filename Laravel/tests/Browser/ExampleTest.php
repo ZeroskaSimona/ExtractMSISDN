@@ -25,7 +25,7 @@ class ExampleTest extends DuskTestCase
     {
     	$this->browse(function (Browser $browser) {
             $browser->type('phoneNo', '+389 70 123456');
-            $browser->pause(5000);
+            $browser->pause(3000);
             $res='+389 70 123456';
             $browser->assertInputValue('phoneNo', $res);
             //$tres='+389 70 123456';
@@ -37,15 +37,15 @@ class ExampleTest extends DuskTestCase
     {
     	$this->browse(function (Browser $browser) {
             $browser->type('phoneNo', '38970123456');
-            $browser->pause(2000);
+            $browser->pause(3000);
             $res='+389 70 123456';
             $resS=str_replace("+","",$res);
             $val=str_replace(" ","",$resS);
-            $browser->assertInputValue('phoneNo', $val);
-                   
+            $browser->assertInputValue('phoneNo', $val);                   
          });   	
     	//$browser->assertElementValueEquals('phoneNo', $val);
     }
-    
+    // za konekcija do baza 
+    //za 4te izlezi:cc,mno,sn,ci
    
 }
