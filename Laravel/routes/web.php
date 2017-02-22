@@ -27,3 +27,10 @@ Route::get('http://localhost/extractMSISDN/laravel/public/extract', function () 
 	$mno = DB::select('select * from mobilenetworkoperator');
     return view('extract')->with(compact('country','mno','name','dc','ci','dclen'));
 });
+
+Route::get('/extract', function () {
+	$name = 'simona'; 
+	$country = DB::select('select * from country');
+	$mno = DB::select('select * from mobilenetworkoperator');
+    return view('extract')->with(compact('country','mno','name','dc','ci','dclen'));
+});

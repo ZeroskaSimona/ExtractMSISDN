@@ -1,4 +1,5 @@
 <?php
+use GuzzleHttp\Client; 
 
 class Msisdn_Controller extends Controller{
 	
@@ -9,4 +10,18 @@ class Msisdn_Controller extends Controller{
 	}
 	
 	//$this->client->request('GET', 'posts');
+	
+	public function saveApiData()
+    {
+        $client = new Client();
+        $res = $client->request('POST', 'https://https://restcountries.eu/rest/v1/callingcode/389'/*, [
+            'form_params' => [
+                'client_id' => 'test_id',
+                'secret' => 'test_secret',
+            ]
+        ]*/);
+
+        $result= $res->getBody();
+        dd($result);
+	}
 }
