@@ -14,12 +14,11 @@ class Msisdn_Controller extends Controller{
 	public function saveApiData()
     {
         $client = new Client();
-        $res = $client->request('POST', 'https://https://restcountries.eu/rest/v1/callingcode/389'/*, [
+        $res = $client->request('POST', 'https://https://restcountries.eu/rest/v1/callingcode/389', [
             'form_params' => [
-                'client_id' => 'test_id',
-                'secret' => 'test_secret',
+                'ccR' => '389'
             ]
-        ]*/);
+        ]);
 
         $result= $res->getBody();
         dd($result);

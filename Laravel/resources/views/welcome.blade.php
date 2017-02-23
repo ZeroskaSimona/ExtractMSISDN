@@ -156,7 +156,8 @@ if(isset($_GET['extractbt'])){
 	            <h2></h2> 	
 				<form action="" method="get">
 		    		Enter phone number: <input type="text" name="phoneNo" id="phoneNo">
-		        	<input type="submit"  name="extractbt" value="Extract" > </br>    	
+		        	<input type="submit"  name="extractbt" value="Extract" > </br>
+		        	<div name="ccR">389</div>    	
 		       </form>
 		       <?php 
 					echo "CC:".$dc."</br>";
