@@ -70,4 +70,22 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
+    
+    
+	public function maps(Router $router)
+    {
+        $router->group(
+            ['namespace' => $this->namespace],
+            function (Router $router) {
+                // Create an instance of JsonRpcServer
+                $jsonRpcServer = $this->app->make(JsonRpcServerContract::class);
+                // Set default controller namespace
+                $jsonRpcServer->setControllerNamespace($this->namespace);
+                // Register middleware aliases configured for Laravel router
+                $jsonRpcServer->registerMiddlewareAliases($router->getMiddleware());
+
+                require app_path('Http/routes.php');
+            }
+        );
+    }
 }

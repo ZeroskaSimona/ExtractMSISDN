@@ -1,4 +1,4 @@
-# ExtractMSISDN
+# Extract MSISDN
 
 1. Create an application with following requirements:
 
