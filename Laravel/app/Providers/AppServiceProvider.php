@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        require_once __DIR__ . '/../Http/helpers.php';
 	    if ($this->app->environment('local', 'testing')) {
 	        $this->app->register(DuskServiceProvider::class);
 	    }

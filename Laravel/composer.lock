@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9e100a1bb78ad43b8d9765dde04220b",
+    "content-hash": "6112f1029d7368e132faa43d63d0b1ba",
     "packages": [
+        {
+            "name": "acgrid/json-rpc-php",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acgrid/json-rpc-php.git",
+                "reference": "31cb7f2559b4c3f49ada66ad3048bb44746a9e4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acgrid/json-rpc-php/zipball/31cb7f2559b4c3f49ada66ad3048bb44746a9e4e",
+                "reference": "31cb7f2559b4c3f49ada66ad3048bb44746a9e4e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pozo\\jsonrpc\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Pozo",
+                    "homepage": "https://github.com/Pozo/json-rpc-php",
+                    "role": "Creator of the original library"
+                },
+                {
+                    "name": "acgrid",
+                    "homepage": "https://github.com/acgrid"
+                }
+            ],
+            "description": "Port of Pozo/json-rpc-php library into PHP 5/7",
+            "homepage": "https://github.com/acgrid/json-rpc-php",
+            "keywords": [
+                "jsonrpc",
+                "web service"
+            ],
+            "time": "2016-03-13T06:48:45+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -196,6 +242,42 @@
                 "webdriver"
             ],
             "time": "2017-01-13T15:48:08+00:00"
+        },
+        {
+            "name": "fguillot/json-rpc",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fguillot/JsonRPC.git",
+                "reference": "0a77cd311783431c851e4c8eed33858663c17277"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fguillot/JsonRPC/zipball/0a77cd311783431c851e4c8eed33858663c17277",
+                "reference": "0a77cd311783431c851e4c8eed33858663c17277",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonRPC": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frédéric Guillot"
+                }
+            ],
+            "description": "Simple Json-RPC client/server library that just works",
+            "homepage": "https://github.com/fguillot/JsonRPC",
+            "time": "2015-09-19T02:27:10+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2093,6 +2175,56 @@
                 "dump"
             ],
             "time": "2017-01-03T08:53:57+00:00"
+        },
+        {
+            "name": "thiagof/laravelrpc",
+            "version": "0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thiagof/laravelrpc.git",
+                "reference": "280fa9b53aa65ef0ac7849406ae6496f9731a9f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thiagof/laravelrpc/zipball/280fa9b53aa65ef0ac7849406ae6496f9731a9f5",
+                "reference": "280fa9b53aa65ef0ac7849406ae6496f9731a9f5",
+                "shasum": ""
+            },
+            "require": {
+                "fguillot/json-rpc": "1.0.*",
+                "illuminate/support": ">=5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "laravel/laravel": ">=5.0",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thiagof\\LaravelRPC\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thiago Fernandes",
+                    "email": "thiago@internetbudi.com.br"
+                }
+            ],
+            "description": "JsonRPC Client/Server services for Laravel 5",
+            "keywords": [
+                "client",
+                "json-rpc",
+                "jsonrpc",
+                "laravel",
+                "rpc",
+                "server"
+            ],
+            "time": "2016-11-03T20:35:26+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

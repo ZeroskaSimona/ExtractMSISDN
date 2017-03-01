@@ -31,7 +31,16 @@ if(isset($_GET['extractbt'])){
 	mysqli_close($con);
 
 	$phNumStr=str_replace("+","",$broj);
-	$phoneNumStr=str_replace(" ","",$phNumStr);
+	$phNumStrs=str_replace(" ","",$phNumStr);
+	$povBroj = substr($phNumStrs,0,2);
+	if ($povBroj == '00'){
+		$phoneNumStr=substr($phNumStrs,2);
+		//echo "test za 00";
+	} else {
+		$phoneNumStr=$phNumStrs;
+		//echo "test za ne 00";
+	}
+	
     //echo "broj: ".$phoneNumStr."</br>";    
 	foreach($rows as $row){
 	  $ccStr=substr($phoneNumStr,0,3);
@@ -164,6 +173,7 @@ if(isset($_GET['extractbt'])){
 					echo "MNO:".$mno."</br>";
 					echo "SN: ".$snStr."</br>";
 					echo "CI:".$ci."</br>";
+					//echo GetCOuntryCode();
 				?>
         	</div>
         </div>
