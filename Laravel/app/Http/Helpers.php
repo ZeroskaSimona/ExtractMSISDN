@@ -2,7 +2,7 @@
 namespace app\Http;
 
 class Helpers {
-    public function GetCOuntryCode(){
+    public function GetCountryCode(){
         //$d = explode("-", $data);
    
         //return $d[2]."/".$d[1]."/".$d[0];

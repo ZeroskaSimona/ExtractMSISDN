@@ -13,6 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
+    //$model = Model::find('MsisdnModel');
+	//return View::make('welcome')->withModel($model);
 });
 
 /*Route::get('/msisdn', function () {
@@ -33,4 +35,8 @@ Route::get('/extract', function () {
 	$country = DB::select('select * from country');
 	$mno = DB::select('select * from mobilenetworkoperator');
     return view('extract')->with(compact('country','mno','name','dc','ci','dclen'));
+});
+
+Route::get('decode/{num}', function ($num) {
+    return View::make('decode', array('msnum' => $num));
 });

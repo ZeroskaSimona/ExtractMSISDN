@@ -1,4 +1,6 @@
 <?php
+//namespace app\Http;
+
 session_start();
 $dc="";
 $dcLen=0;
@@ -173,7 +175,7 @@ if(isset($_GET['extractbt'])){
 					echo "MNO:".$mno."</br>";
 					echo "SN: ".$snStr."</br>";
 					echo "CI:".$ci."</br>";
-					//echo GetCOuntryCode();
+					//echo app/Http/Helpers->GetCountryCode();
 				?>
         	</div>
         </div>

@@ -45,7 +45,4 @@ class ExampleTest extends DuskTestCase
          });   	
     	//$browser->assertElementValueEquals('phoneNo', $val);
     }
-    // za konekcija do baza 
-    //za 4te izlezi:cc,mno,sn,ci
-   
-}
+ }

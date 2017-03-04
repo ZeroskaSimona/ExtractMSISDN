@@ -11,7 +11,7 @@ class Msisdn_Controller extends Controller{
 	
 	//$this->client->request('GET', 'posts');
 	
-	public function saveApiData()
+	/*public function saveApiData()
     {
         $client = new Client();
         $res = $client->request('POST', 'https://https://restcountries.eu/rest/v1/callingcode/389', [
@@ -22,5 +22,5 @@ class Msisdn_Controller extends Controller{
 
         $result= $res->getBody();
         dd($result);
-	}
+	}*/
 }
