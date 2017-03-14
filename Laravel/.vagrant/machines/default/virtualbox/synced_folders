@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/xampp/htdocs/ExtractMSISDN/Laravel","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/xampp/htdocs/ExtractMSISDN/Laravel","disabled":false,"__vagrantfile":true},"v-csc-97fffc55f":{"id":"v-csc-97fffc55f","guestpath":"/tmp/vagrant-chef/1fccb32cef8bd57b89e4b9d7ba51a3aa/cookbooks","hostpath":"C:/xampp/htdocs/ExtractMSISDN/Laravel/cookbooks","disabled":false,"__vagrantfile":true}}}
