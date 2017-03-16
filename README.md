@@ -31,3 +31,6 @@
 
 - To run test, use command "php artisan dusk" in cmd
 
+- Use vagrant and chef as configuration management tool
+
+
