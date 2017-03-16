@@ -19,7 +19,7 @@
     "windows": ">= 0.0.0"
   },
   "dependencies": {
-    "openssl": "~> 1.1",
+    "openssl": "~> 7.0.0"
     "build-essential": "~> 1.4",
     "homebrew": ">= 0.0.0",
     "windows": ">= 0.0.0"

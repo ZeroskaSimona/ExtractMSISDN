@@ -1,7 +1,7 @@
 <?php
 namespace app\Http;
 
-class Helpers {
+ class Helpers {
     public function GetCountryCode(){
         //$d = explode("-", $data);
    

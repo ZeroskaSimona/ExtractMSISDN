@@ -176,6 +176,7 @@ if(isset($_GET['extractbt'])){
 					echo "SN: ".$snStr."</br>";
 					echo "CI:".$ci."</br>";
 					//echo app/Http/Helpers->GetCountryCode();
+					
 				?>
         	</div>
         </div>
